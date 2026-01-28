@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import Header from './components/Header/Header';
+import Container from './components/Container/Container';
 
 const interSans = Inter({
   variable: '--font-inter-sans',
@@ -10,7 +12,7 @@ const interSans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'TravelTrucks app',
+  title: 'Travel Trucks',
   description: 'Book camper for your next adventure',
 };
 
@@ -21,7 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${interSans.variable}`}>{children}</body>
+      <body className={`${interSans.variable}`}>
+        <Container>
+          <Header />
+          {children}
+        </Container>
+      </body>
     </html>
   );
 }

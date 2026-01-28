@@ -1,0 +1,63 @@
+.heroPage {
+    background-image: url('/Hero-camper.webp');
+    height: 696px;
+    padding: 260px 805px 260px 64px;
+}
+
+.heroSection {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 40px;
+    width: 571px;
+    height: 176px;
+}
+
+.heroText {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    width: 571px;
+}
+
+.heroTitle {
+    font-weight: 600;
+    font-size: 47px;
+    line-height: 0.67;
+    color: var(--inputs);
+}
+
+.heroSubText {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33;
+    color: var(--inputs);
+}
+
+.heroBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    border-radius: 200px;
+    padding: 16px 48px;
+    width: 173px;
+    height: 56px;
+    background-color: var(--button);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    transition: background-color cubic-bezier(0.075, 0.82, 0.165, 1) ease-in-out;
+}
+
+.heroBtn:focus,
+.heroBtn:hover {
+
+    background-color: var(--button-hover);
+}

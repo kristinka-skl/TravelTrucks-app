@@ -1,0 +1,37 @@
+.header {
+    border-bottom: 1px solid #f2f4f7;
+    padding: 24px 64px;
+    width: 1440px;
+    height: 72px;
+    background: #f7f7f7;
+}
+
+.headerNav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 450px;
+}
+
+.headerNavLinks {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 32px;
+    width: 138px;
+    height: 24px;
+}
+
+.headerLink {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--main);
+}
+
+.activeHeaderLink {
+    color: var(--button-hover);
+}
