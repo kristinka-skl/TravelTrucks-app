@@ -1,3 +1,17 @@
-export default function CamperDetails() {
-  return <p>Camper details page</p>;
+import { getCamperDetails } from '@/app/lib/api';
+
+interface CamperDetailsProps {
+  params: Promise<{ id: string }>;
+}
+
+export default async function CamperDetails({ params }: CamperDetailsProps) {
+  const { id } = await params;
+  const camper = await getCamperDetails(id);
+
+  return (
+    <>
+      <p>Camper details page</p>
+      <p>{camper.description}</p>
+    </>
+  );
 }
