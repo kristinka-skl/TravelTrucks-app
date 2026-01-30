@@ -1,3 +1,4 @@
+import CamperItem from '@/app/components/CamperItem/CamperItem';
 import { getCamperDetails } from '@/app/lib/api';
 
 interface CamperDetailsProps {
@@ -7,11 +8,5 @@ interface CamperDetailsProps {
 export default async function CamperDetails({ params }: CamperDetailsProps) {
   const { id } = await params;
   const camper = await getCamperDetails(id);
-
-  return (
-    <>
-      <p>Camper details page</p>
-      <p>{camper.description}</p>
-    </>
-  );
+  return <CamperItem camper={camper} />;
 }
