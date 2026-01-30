@@ -40,4 +40,5 @@ export interface Camper {
 export interface HttpResponse {
   total: number;
   items: Camper[];
+  page: number;
 }

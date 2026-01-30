@@ -9,7 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.90.20",
     "axios": "^1.13.4",
+    "formik": "^2.4.9",
     "modern-normalize": "^3.0.1",
     "next": "16.1.6",
     "react": "19.2.3",

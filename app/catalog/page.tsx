@@ -1,25 +1,23 @@
-import Link from 'next/link';
 import { getCampers } from '../lib/api';
-import CampersList from '../components/CampersList/CampersList';
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from '@tanstack/react-query';
+import CatalogClientPage from './catalogPage.client';
 
 export default async function Campers() {
-  const { items: campers } = await getCampers();
+  const queryClient = new QueryClient();
+  await queryClient.prefetchInfiniteQuery({
+    queryKey: ['campers'],
+    queryFn: () => getCampers(1),
+    initialPageParam: 1,
+  });
+  // const { items: campers } = await getCampers();
 
   return (
-    <section>
-      <h2>Campers List</h2>
-      {campers && <CampersList campers={campers} />}
-    </section>
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <CatalogClientPage />
+    </HydrationBoundary>
   );
 }
-
-//   (
-//   <ul>
-//     {campers.map((camper) => (
-//       <li key={camper.id}>
-//         <p>{camper.name}</p>
-//         <Link href={`/catalog/${camper.id}`}>Show more</Link>
-//       </li>
-//     ))}
-//   </ul>
-// )}

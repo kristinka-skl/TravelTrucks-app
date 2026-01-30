@@ -46,7 +46,7 @@ export default function CamperItem({ camper }: CamperItemProps) {
             <svg width={16} height={16}>
               <use href="/sprite.svg#icon-map"></use>
             </svg>
-            <p>{camper.location}</p>
+            <p>{camper.location.split(', ').reverse().join(', ')}</p>
           </div>
         </div>
         <p className={css.camperDescr}>

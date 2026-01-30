@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from './components/Header/Header';
 import Container from './components/Container/Container';
+import TanStackProvider from './components/TanStackProvider/TanStackProvider';
 
 const interSans = Inter({
   variable: '--font-inter-sans',
@@ -24,10 +25,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${interSans.variable}`}>
-        <Container>
-          <Header />
-          {children}
-        </Container>
+        <TanStackProvider>
+          <Container>
+            <Header />
+            {children}
+          </Container>
+        </TanStackProvider>
       </body>
     </html>
   );

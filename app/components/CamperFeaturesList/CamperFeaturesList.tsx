@@ -13,7 +13,6 @@ const ProductFeaturesList: React.FC<ProductFeaturesListProps> = ({
   return (
     <ul className={css.list}>
       {FEATURES_CONFIG.map((config) => {
-        console.log(camper);
         const value = camper[config.key];
         if (!value) return null;
 
