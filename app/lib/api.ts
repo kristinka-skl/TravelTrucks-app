@@ -1,14 +1,19 @@
 import axios from 'axios';
-import { Camper, HttpResponse } from '../types/camper';
+import { Camper, HttpResponse, SearchParams } from '../types/camper';
 import cardsPerPage from '../constants/constants';
 
 const nextServer = axios.create({
   baseURL: 'http://localhost:3002/api',
 });
 
-export async function getCampers(page?: number) {
+export async function getCampers(params: SearchParams = {}) {
+  const { page = 1, limit = cardsPerPage, ...filters } = params;
   const res = await nextServer.get<HttpResponse>('/catalog', {
-    params: { page, limit: cardsPerPage },
+    params: {
+      page,
+      limit,
+      ...filters,
+    },
   });
   return res.data;
 }

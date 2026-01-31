@@ -5,14 +5,17 @@ import Filters from '../components/Filters/Filters';
 import css from './catalogPage.module.css';
 import { getCampers } from '../lib/api';
 import { useEffect, useRef } from 'react';
-import cardsPerPage from '../constants/constants';
+
+import { useSearchParams } from 'next/navigation';
 
 export default function CatalogClientPage() {
+  const searchParams = useSearchParams();
+  const params = Object.fromEntries(searchParams.entries());
   const { data, isSuccess, hasNextPage, isFetchingNextPage, fetchNextPage } =
     useInfiniteQuery({
-      queryKey: ['campers'],
+      queryKey: ['campers', params],
       queryFn: ({ pageParam }) => {
-        return getCampers(pageParam);
+        return getCampers({ ...params, page: pageParam });
       },
       initialPageParam: 1,
       getNextPageParam: (lastPage, allPages) => {
@@ -31,14 +34,17 @@ export default function CatalogClientPage() {
       },
     });
   const campers = data?.campers || [];
-  const prevCountRef = useRef(campers.length);
+  const prevCountRef = useRef(0);
   useEffect(() => {
-    if (campers.length > prevCountRef.current) {
+    if (prevCountRef.current > 0 && campers.length > prevCountRef.current) {
       window.scrollBy({ top: 360, behavior: 'smooth' });
     }
     prevCountRef.current = campers.length;
   }, [campers.length]);
-
+  //   const paramsString = searchParams.toString();
+  //   useEffect(() => {
+  //     window.scrollTo({ top: 0, behavior: 'smooth' });
+  //   }, [paramsString]);
   return (
     <section className={css.catalogSection}>
       <h2 className={css.hidden}>Campers List</h2>
