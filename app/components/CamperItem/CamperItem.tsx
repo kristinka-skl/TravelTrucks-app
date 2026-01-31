@@ -1,13 +1,20 @@
+'use client';
 import { Camper } from '@/app/types/camper';
 import css from './CamperItem.module.css';
 import Image from 'next/image';
 import ProductFeaturesList from '../CamperFeaturesList/CamperFeaturesList';
 import Link from 'next/link';
+import { useFavoritesStore } from '@/app/store/favoritesStore';
 
 interface CamperItemProps {
   camper: Camper;
 }
 export default function CamperItem({ camper }: CamperItemProps) {
+  const { favorites, toggleFavorite } = useFavoritesStore();
+  const isFavorite = favorites.some((fav) => fav.id === camper.id);
+  const handleHeartClick = () => {
+    toggleFavorite(camper);
+  };
   const thumb = camper.gallery[0].thumb;
   return (
     <div className={css.card}>
@@ -28,9 +35,19 @@ export default function CamperItem({ camper }: CamperItemProps) {
               <span>&#8364;</span>
               {camper.price.toFixed(2)}
             </p>
-            <svg width={26} height={24}>
-              <use href="/sprite.svg#icon-heart"></use>
-            </svg>
+            <button
+              type="button"
+              onClick={handleHeartClick}
+              className={css.heartBtn}
+            >
+              <svg
+                width={26}
+                height={24}
+                className={`${isFavorite ? css.activeHeartIcon : ''}`}
+              >
+                <use href="/sprite.svg#icon-heart"></use>
+              </svg>
+            </button>
           </div>
         </div>
         <div className={css.ratingAndLocation}>

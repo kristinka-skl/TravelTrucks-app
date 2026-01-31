@@ -5,12 +5,9 @@ import { useId } from 'react';
 import { useRouter } from 'next/navigation';
 import { usePathname, useSearchParams } from 'next/navigation';
 import * as Yup from 'yup';
+import { FilterFormValues } from '@/app/types/camper';
+import { useCamperFiltersStore } from '@/app/store/campersStore';
 
-interface FilterFormValues {
-  location: string;
-  equipment: string[];
-  type: string;
-}
 const FiltersFormSchema = Yup.object().shape({
   location: Yup.string().trim().required('Location is required'),
   equipment: Yup.array().of(Yup.string().optional()),
@@ -21,12 +18,7 @@ export default function Filters() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const fieldId = useId();
-
-  const initialValues: FilterFormValues = {
-    location: '',
-    equipment: [],
-    type: '',
-  };
+  const { filters, setFilters, clearFilters } = useCamperFiltersStore();
 
   const checkActiveFilters = () => {
     const params = new URLSearchParams(searchParams);
@@ -37,14 +29,12 @@ export default function Filters() {
   const hasFilters = checkActiveFilters();
 
   const handleResetFilters = (resetForm: () => void) => {
-    resetForm(); // Очищає інпути Formik
-    router.replace(pathname, { scroll: false }); // Прибирає всі параметри з URL
+    resetForm();
+    clearFilters();
+    router.replace(pathname, { scroll: false });
   };
-  const handleSubmit = (
-    values: FilterFormValues,
-    actions: FormikHelpers<FilterFormValues>
-  ) => {
-    console.log(values);
+  const handleSubmit = (values: FilterFormValues) => {
+    setFilters(values);
     const params = new URLSearchParams(searchParams);
     if (values.location && values.location.trim() !== '') {
       const city = values.location.split(',')[0].trim();
@@ -74,12 +64,11 @@ export default function Filters() {
       }
     });
     params.set('page', '1');
-
     router.replace(`${pathname}?${params.toString()}`, { scroll: false });
   };
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={filters}
       onSubmit={handleSubmit}
       validationSchema={FiltersFormSchema}
       enableReinitialize
@@ -151,7 +140,7 @@ export default function Filters() {
 
           {hasFilters && (
             <button
-              className={css.resetBtn} // Стилізуйте цю кнопку (наприклад, сіра або прозора)
+              className={css.resetBtn}
               type="button"
               onClick={() => handleResetFilters(resetForm)}
             >

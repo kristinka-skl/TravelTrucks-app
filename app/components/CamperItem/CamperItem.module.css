@@ -35,6 +35,25 @@
     gap: 12px;
 }
 
+.heartBtn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.heartBtn:active {
+    transform: scale(0.9);
+}
+
+.activeHeartIcon {
+    fill: var(--button);
+}
+
 .ratingAndLocation {
     display: flex;
     align-items: flex-start;

@@ -40,7 +40,7 @@ export interface Camper {
 export interface HttpResponse {
   total: number;
   items: Camper[];
-  page: number;
+  //   page: number;
 }
 
 export interface SearchParams {
@@ -53,4 +53,9 @@ export interface SearchParams {
   transmission?: string;
   TV?: boolean | string;
   bathroom?: boolean | string;
+}
+export interface FilterFormValues {
+  location: string;
+  equipment: string[];
+  type: string;
 }
