@@ -10,7 +10,7 @@ export default async function Campers() {
   const queryClient = new QueryClient();
   await queryClient.prefetchInfiniteQuery({
     queryKey: ['campers'],
-    queryFn: () => getCampers(1),
+    queryFn: () => getCampers(),
     initialPageParam: 1,
   });
   // const { items: campers } = await getCampers();

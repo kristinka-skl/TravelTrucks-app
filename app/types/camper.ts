@@ -42,3 +42,15 @@ export interface HttpResponse {
   items: Camper[];
   page: number;
 }
+
+export interface SearchParams {
+  page?: number;
+  limit?: number;
+  location?: string;
+  form?: string;
+  AC?: boolean;
+  kitchen?: boolean;
+  transmission?: string;
+  TV?: boolean | string;
+  bathroom?: boolean | string;
+}
