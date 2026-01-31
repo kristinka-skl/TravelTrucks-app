@@ -2,3 +2,206 @@
     outline: none;
     border: none;
 }
+
+.locationGroup {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.locationGroup label {
+
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--gray);
+}
+
+.inputWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.inputIcon {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+    z-index: 1;
+    fill: var(--gray);
+    pointer-events: none;
+}
+
+.inputWrapper:focus-within .inputIcon {
+    fill: var(--main);
+}
+
+
+.locationInput {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    outline: none;
+    border-color: transparent;
+    gap: 10px;
+    border-radius: 12px;
+    padding: 18px 20px 18px 48px;
+    width: 360px;
+    height: 56px;
+    background: var(--inputs);
+}
+
+
+.filtersGroupTitle {
+    margin-bottom: 32px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+.filterEquipmentTitle,
+.filterTypeTitle {
+    margin-bottom: 24px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--main);
+    width: 100%;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.filterEquipmentGroup {
+    margin-bottom: 32px;
+}
+
+.filterTypeGroup {
+    margin-bottom: 40px;
+}
+
+.filterEquipmentGroup,
+.filterTypeGroup {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 12px;
+    column-gap: 10px;
+}
+
+.filterOptionLabel {
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.hiddenInput {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    /* clip: rect(0 0 0 0); */
+    border: 0;
+}
+
+.filterOptionContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 112px;
+    height: 96px;
+    border: 1px solid var(--gray-light);
+    border-radius: 12px;
+    padding: 16px 26px;
+    background-color: var(--white);
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+
+.fullyIntegratedCard {
+    padding: 8px 16px;
+}
+
+.filterOptionLabel:hover,
+.filterOptionLabel:focus {
+    scale: calc(1.03);
+}
+
+.labelText {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: var(--main);
+}
+
+.icon {
+    margin-bottom: 8px;
+    fill: var(--main);
+}
+
+.hiddenInput:checked+.filterOptionContent {
+    border-color: var(--button);
+}
+
+.filterBtns {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.searchBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    border-radius: 200px;
+    padding: 16px 56px;
+    width: 166px;
+    height: 56px;
+    background: var(--button);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    transition: background-color cubic-bezier(0.075, 0.82, 0.165, 1) ease-in-out;
+}
+
+.searchBtn:hover,
+.searchBtn:focus {
+    background-color: var(--button-hover)
+}
+
+.resetBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    border-radius: 200px;
+    padding: 16px 56px;
+    width: 166px;
+    height: 56px;
+    background-color: transparent;
+    border: 1px solid var(--gray-light);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: var(--main);
+    transition: background-color cubic-bezier(0.075, 0.82, 0.165, 1) ease-in-out;
+}
+
+.resetBtn:hover,
+.resetBtn:focus {
+    border-color: var(--button-hover);
+}

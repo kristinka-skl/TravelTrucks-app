@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Camper, HttpResponse, SearchParams } from '../types/camper';
-import cardsPerPage from '../constants/constants';
+import { cardsPerPage } from '../constants/constants';
 
 const nextServer = axios.create({
   baseURL: 'http://localhost:3002/api',

@@ -1,5 +1,5 @@
 'use client';
-import { ErrorMessage, Field, Form, Formik, FormikHelpers } from 'formik';
+import { Field, Form, Formik } from 'formik';
 import css from './Filters.module.css';
 import { useId } from 'react';
 import { useRouter } from 'next/navigation';
@@ -7,9 +7,10 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import * as Yup from 'yup';
 import { FilterFormValues } from '@/app/types/camper';
 import { useCamperFiltersStore } from '@/app/store/campersStore';
+import { equipmentOptions, typeOptions } from '@/app/constants/constants';
 
 const FiltersFormSchema = Yup.object().shape({
-  location: Yup.string().trim().required('Location is required'),
+  location: Yup.string().trim().optional(),
   equipment: Yup.array().of(Yup.string().optional()),
   type: Yup.string().optional(),
 });
@@ -74,80 +75,97 @@ export default function Filters() {
       enableReinitialize
     >
       {({ resetForm }) => (
-        <Form className={css.form}>
-          <fieldset>
-            <label htmlFor={`${fieldId}-location`}>Location</label>
-            <Field
-              type="text"
-              name="location"
-              id={`${fieldId}-location`}
-              placeholder="Kyiv, Ukraine"
-            />
-            <ErrorMessage
-              name="location"
-              component="span"
-              className={css.error}
-            />
+        <section className={css.filtersSection}>
+          <Form className={css.form}>
+            <fieldset>
+              <div className={css.locationGroup}>
+                <label htmlFor={`${fieldId}-location`}>Location</label>
+                <div className={css.inputWrapper}>
+                  <svg className={css.inputIcon} width={20} height={20}>
+                    <use href="/sprite.svg#icon-map"></use>
+                  </svg>
+                  <Field
+                    type="text"
+                    name="location"
+                    id={`${fieldId}-location`}
+                    placeholder="City"
+                    className={css.locationInput}
+                  />
+                </div>
+              </div>
+              <h3 className={css.filtersGroupTitle}>Filters</h3>
+              <fieldset>
+                <legend className={css.filterEquipmentTitle}>
+                  Vehicle equipment
+                </legend>
+                <div className={css.filterEquipmentGroup}>
+                  {equipmentOptions.map((option) => (
+                    <label key={option.value} className={css.filterOptionLabel}>
+                      <Field
+                        type="checkbox"
+                        name="equipment"
+                        value={option.value}
+                        className={css.hiddenInput}
+                      />
 
-            <div id={`${fieldId}-equipment`}>Vehicle equipment</div>
-            <div role="group" aria-labelledby={`${fieldId}-equipment`}>
-              <label>
-                <Field type="checkbox" name="equipment" value="AC" />
-                AC
-              </label>
-              <label>
-                <Field type="checkbox" name="equipment" value="Automatic" />
-                Automatic
-              </label>
-              <label>
-                <Field type="checkbox" name="equipment" value="Kitchen" />
-                Kitchen
-              </label>
-              <label>
-                <Field type="checkbox" name="equipment" value="TV" />
-                TV
-              </label>
-              <label>
-                <Field type="checkbox" name="equipment" value="Bathroom" />
-                Bathroom
-              </label>
-              <ErrorMessage
-                name="equipment"
-                component="span"
-                className={css.error}
-              />
+                      <div className={css.filterOptionContent}>
+                        <svg width="32" height="32" className={css.icon}>
+                          <use href={`/sprite.svg#${option.icon}`} />
+                        </svg>
+                        <span className={css.labelText}>{option.label}</span>
+                      </div>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend className={css.filterTypeTitle}>Vehicle type</legend>
+                <div
+                  role="group"
+                  aria-labelledby={`${fieldId}-type`}
+                  className={css.filterTypeGroup}
+                >
+                  {typeOptions.map((option) => (
+                    <label key={option.value} className={css.filterOptionLabel}>
+                      <Field
+                        type="radio"
+                        name="type"
+                        value={option.value}
+                        className={css.hiddenInput}
+                      />
+
+                      <div
+                        className={`
+            ${css.filterOptionContent} 
+            ${option.value === 'fullyIntegrated' ? css.fullyIntegratedCard : ''}
+          `}
+                      >
+                        <svg width="32" height="32" className={css.icon}>
+                          <use href={`/sprite.svg#${option.icon}`} />
+                        </svg>
+                        <span className={css.labelText}>{option.label}</span>
+                      </div>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+            </fieldset>
+            <div className={css.filterBtns}>
+              <button className={css.searchBtn} type="submit">
+                {/* {isPending ? 'Searching' : 'Search'} */}Search
+              </button>
+              {hasFilters && (
+                <button
+                  className={css.resetBtn}
+                  type="button"
+                  onClick={() => handleResetFilters(resetForm)}
+                >
+                  Reset
+                </button>
+              )}
             </div>
-
-            <div id={`${fieldId}-type`}>Vehicle type</div>
-            <div role="group" aria-labelledby={`${fieldId}-type`}>
-              <label>
-                <Field type="radio" name="type" value="panelTruck" />
-                Van
-              </label>
-              <label>
-                <Field type="radio" name="type" value="fullyIntegrated" />
-                Fully Integrated
-              </label>
-              <label>
-                <Field type="radio" name="type" value="alcove" />
-                Alcove
-              </label>
-            </div>
-          </fieldset>
-          <button className={css.searchBtn} type="submit">
-            {/* {isPending ? 'Searching' : 'Search'} */}Search
-          </button>
-
-          {hasFilters && (
-            <button
-              className={css.resetBtn}
-              type="button"
-              onClick={() => handleResetFilters(resetForm)}
-            >
-              Reset
-            </button>
-          )}
-        </Form>
+          </Form>
+        </section>
       )}
     </Formik>
   );
