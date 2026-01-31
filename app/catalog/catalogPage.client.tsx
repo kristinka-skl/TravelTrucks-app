@@ -41,10 +41,6 @@ export default function CatalogClientPage() {
     }
     prevCountRef.current = campers.length;
   }, [campers.length]);
-  //   const paramsString = searchParams.toString();
-  //   useEffect(() => {
-  //     window.scrollTo({ top: 0, behavior: 'smooth' });
-  //   }, [paramsString]);
   return (
     <section className={css.catalogSection}>
       <h2 className={css.hidden}>Campers List</h2>

@@ -32,11 +32,11 @@
     line-height: 1.5;
     letter-spacing: -0.01em;
     color: var(--main);
-    transition: background-color cubic-bezier(0.075, 0.82, 0.165, 1) ease-in-out;
+    transition: border-color cubic-bezier(0.075, 0.82, 0.165, 1) ease-in-out;
 }
 
 .loadMoreBtn:focus,
 .loadMoreBtn:hover {
 
-    background-color: var(--gray-light);
+    border-color: var(--button-hover);
 }
