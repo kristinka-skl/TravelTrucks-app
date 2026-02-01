@@ -21,9 +21,6 @@ export default function Filters() {
   const searchParams = useSearchParams();
   const fieldId = useId();
   const { filters, setFilters, clearFilters } = useCamperFiltersStore();
-
-  console.log(filters);
-
   const isEmptyFilters = (filters: FilterFormValues) =>
     filters.location === '' &&
     filters.type === '' &&
