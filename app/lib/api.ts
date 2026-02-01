@@ -3,7 +3,7 @@ import { Camper, HttpResponse, SearchParams } from '../types/camper';
 import { cardsPerPage } from '../constants/constants';
 
 const nextServer = axios.create({
-  baseURL: 'http://localhost:3002/api',
+  baseURL: process.env.NEXT_PUBLIC_API_URL + '/api',
 });
 
 export async function getCampers(params: SearchParams = {}) {
