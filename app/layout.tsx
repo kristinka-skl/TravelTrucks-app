@@ -16,6 +16,21 @@ const interSans = Inter({
 export const metadata: Metadata = {
   title: 'Travel Trucks',
   description: 'Book camper for your next adventure',
+  openGraph: {
+    title: `Travel Trucks`,
+    description: 'Book camper for your next adventure',
+    url: `https://travel-trucks-app-eight.vercel.app/`,
+    siteName: 'Travel Trucks',
+    images: [
+      {
+        url: '/TravelTrucks.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Camper app',
+      },
+    ],
+    type: 'article',
+  },
 };
 
 export default function RootLayout({
