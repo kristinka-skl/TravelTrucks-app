@@ -11,10 +11,10 @@
 ## 📋 Features
 
 - **Home Page:** Attractive banner with a call-to-action to explore the catalog.
-- **Catalog:** \* Display a list of campers with essential details.
+- **Catalog:** Display a list of campers with essential details.
   - **Server-side filtering** by location, body type, and equipment (AC, kitchen, TV, etc.).
   - "Load More" functionality for pagination.
-- **Camper Details:** \* Comprehensive description, photo gallery, and vehicle specifications.
+- **Camper Details:** Comprehensive description, photo gallery, and vehicle specifications.
   - User reviews section.
   - Booking form with validation.
 - **Favorites:** Ability to add/remove campers to a favorites list (persisted in local storage).
@@ -37,7 +37,7 @@ Follow these steps to set up the project locally:
 1.  **Clone the repository:**
 
     ```bash
-    git clone [https://github.com/your-username/travel-trucks.git](https://github.com/your-username/travel-trucks.git)
+    git clone [https://github.com/kristinka-skl/travel-trucks.git](https://github.com/kristinka-skl/travel-trucks.git)
     ```
 
 2.  **Navigate to the project directory:**
@@ -66,7 +66,7 @@ Follow these steps to set up the project locally:
 
 ## 👩‍💻 Author
 
-**Khrystyana Skliarchuk** Frontend Developer
+**Khrystyana Skliarchuk** Junior Frontend Developer
 
 📧 Email: [kristinka.skl@gmail.com](mailto:kristinka.skl@gmail.com)  
 🐙 GitHub: [Go to Profile](https://github.com/kristinka-skl)

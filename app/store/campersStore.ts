@@ -6,17 +6,19 @@ interface CamperFiltersStore {
   setFilters: (filters: FilterFormValues) => void;
   clearFilters: () => void;
 }
-const initialFilters: FilterFormValues = {
+
+const emptyFilters: FilterFormValues = {
   location: '',
   equipment: [],
   type: '',
 };
+
 export const useCamperFiltersStore = create<CamperFiltersStore>()(
   persist(
     (set) => ({
-      filters: initialFilters,
+      filters: emptyFilters,
       setFilters: (filters) => set(() => ({ filters: filters })),
-      clearFilters: () => set(() => ({ filters: initialFilters })),
+      clearFilters: () => set(() => ({ filters: emptyFilters })),
     }),
     {
       name: 'camper-filters',

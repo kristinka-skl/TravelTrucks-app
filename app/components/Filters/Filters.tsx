@@ -22,13 +22,12 @@ export default function Filters() {
   const fieldId = useId();
   const { filters, setFilters, clearFilters } = useCamperFiltersStore();
 
-  const checkActiveFilters = () => {
-    const params = new URLSearchParams(searchParams);
-    params.delete('page');
-    params.delete('limit');
-    return params.toString().length > 0;
-  };
-  const hasFilters = checkActiveFilters();
+  console.log(filters);
+
+  const isEmptyFilters = (filters: FilterFormValues) =>
+    filters.location === '' &&
+    filters.type === '' &&
+    filters.equipment.length === 0;
 
   const handleResetFilters = (resetForm: () => void) => {
     resetForm();
@@ -75,7 +74,7 @@ export default function Filters() {
       validationSchema={FiltersFormSchema}
       enableReinitialize
     >
-      {({ resetForm }) => (
+      {({ values, resetForm }) => (
         <section className={css.filtersSection}>
           <Form className={css.form}>
             <fieldset>
@@ -161,7 +160,7 @@ export default function Filters() {
               <Button primary type="submit">
                 {/* {isPending ? 'Searching' : 'Search'} */}Search
               </Button>
-              {hasFilters && (
+              {!isEmptyFilters(values) && (
                 <Button
                   type="button"
                   onClick={() => handleResetFilters(resetForm)}
