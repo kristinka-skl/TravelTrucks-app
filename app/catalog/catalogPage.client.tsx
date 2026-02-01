@@ -7,6 +7,7 @@ import { getCampers } from '../lib/api';
 import { useEffect, useRef } from 'react';
 
 import { useSearchParams } from 'next/navigation';
+import Button from '../components/Button/Button';
 
 export default function CatalogClientPage() {
   const searchParams = useSearchParams();
@@ -71,14 +72,13 @@ export default function CatalogClientPage() {
         )}
 
         {hasNextPage && (
-          <button
+          <Button
             onClick={() => fetchNextPage()}
-            disabled={isFetchingNextPage}
-            className={css.loadMoreBtn}
             type="button"
+            disabled={isFetchingNextPage}
           >
             {isFetchingNextPage ? 'Loading...' : 'Load More'}
-          </button>
+          </Button>
         )}
       </div>
     </section>

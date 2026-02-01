@@ -3,6 +3,7 @@ import css from './Booking.module.css';
 import CalendarDatePicker from '../CalendarDatePicker/CalendarDatePicker';
 import * as Yup from 'yup';
 import toast from 'react-hot-toast';
+import Button from '../Button/Button';
 interface BookingFormValues {
   name: string;
   email: string;
@@ -67,9 +68,9 @@ export default function Booking() {
               rows="4"
             ></Field>
           </fieldset>
-          <button className={css.sendBtn} type="submit">
+          <Button type="submit" primary>
             Send
-          </button>
+          </Button>
         </Form>
       </Formik>
     </>

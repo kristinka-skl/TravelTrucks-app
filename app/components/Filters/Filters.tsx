@@ -8,6 +8,7 @@ import * as Yup from 'yup';
 import { FilterFormValues } from '@/app/types/camper';
 import { useCamperFiltersStore } from '@/app/store/campersStore';
 import { equipmentOptions, typeOptions } from '@/app/constants/constants';
+import Button from '../Button/Button';
 
 const FiltersFormSchema = Yup.object().shape({
   location: Yup.string().trim().optional(),
@@ -157,17 +158,16 @@ export default function Filters() {
               </fieldset>
             </fieldset>
             <div className={css.filterBtns}>
-              <button className={css.searchBtn} type="submit">
+              <Button primary type="submit">
                 {/* {isPending ? 'Searching' : 'Search'} */}Search
-              </button>
+              </Button>
               {hasFilters && (
-                <button
-                  className={css.resetBtn}
+                <Button
                   type="button"
                   onClick={() => handleResetFilters(resetForm)}
                 >
                   Reset
-                </button>
+                </Button>
               )}
             </div>
           </Form>

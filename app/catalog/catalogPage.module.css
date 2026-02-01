@@ -14,31 +14,6 @@
     height: 752px;
 }
 
-.loadMoreBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 10px;
-    border: 1px solid var(--gray-light);
-    border-radius: 200px;
-    padding: 16px 30px;
-    width: 145px;
-    height: 56px;
-    background-color: transparent;
-    margin: 0 auto;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: -0.01em;
-    color: var(--main);
-    transition: border-color cubic-bezier(0.075, 0.82, 0.165, 1) ease-in-out;
-}
-
-.loadMoreBtn:focus,
-.loadMoreBtn:hover {
-    border-color: var(--button-hover);
-}
 
 .campersList {
     width: 100%;
