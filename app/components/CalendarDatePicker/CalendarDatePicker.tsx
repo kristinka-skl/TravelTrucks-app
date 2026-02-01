@@ -3,6 +3,7 @@ import { FieldProps } from 'formik';
 import DatePicker from 'react-datepicker';
 import { format } from 'date-fns';
 import 'react-datepicker/dist/react-datepicker.css';
+import css from './CalendarDatePicker.module.css';
 
 interface CalendarDatePickerProps extends FieldProps {
   onDateSelect?: (dateStr: string) => void;
@@ -39,6 +40,7 @@ const CalendarDatePicker: React.FC<CalendarDatePickerProps> = ({
       selected={dateValue}
       onChange={handleChange}
       minDate={new Date()}
+      calendarClassName={css.calendar}
     />
   );
 };
