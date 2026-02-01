@@ -12,11 +12,18 @@ import { getCamperDetails } from '@/app/lib/api';
 export default function CamperDetailsClientPage() {
   const [activeTab, setActiveTab] = useState('feature');
   const { id } = useParams<{ id: string }>();
-  const { data: camper, isSuccess } = useQuery({
+  const {
+    data: camper,
+    isSuccess,
+    isError,
+    error,
+  } = useQuery({
     queryKey: ['camper', id],
     queryFn: () => getCamperDetails(id),
   });
-
+  if (isError) {
+    throw error;
+  }
   return (
     isSuccess && (
       <section className={css.sectionCamperDetailsPage}>
