@@ -2,9 +2,10 @@
 import { Camper } from '@/app/types/camper';
 import css from './CamperItem.module.css';
 import Image from 'next/image';
-import ProductFeaturesList from '../CamperFeaturesList/CamperFeaturesList';
 import Link from 'next/link';
 import { useFavoritesStore } from '@/app/store/favoritesStore';
+import RatingAndLocation from '../RatingAndLocation/RatingAndLocation';
+import CamperFeaturesList from '../CamperFeaturesList/CamperFeaturesList';
 
 interface CamperItemProps {
   camper: Camper;
@@ -50,27 +51,12 @@ export default function CamperItem({ camper }: CamperItemProps) {
             </button>
           </div>
         </div>
-        <div className={css.ratingAndLocation}>
-          <div className={css.rating}>
-            <svg width={16} height={16}>
-              <use href="/sprite.svg#icon-star"></use>
-            </svg>
-            <p>
-              {camper.rating} ({camper.reviews.length} Reviews)
-            </p>
-          </div>
-          <div className={css.location}>
-            <svg width={16} height={16}>
-              <use href="/sprite.svg#icon-map"></use>
-            </svg>
-            <p>{camper.location.split(', ').reverse().join(', ')}</p>
-          </div>
-        </div>
+        <RatingAndLocation camper={camper} />
         <p className={css.camperDescr}>
           {camper.description.slice(0, 60) + '...'}
         </p>
         <div className={css.features}>
-          <ProductFeaturesList camper={camper} />
+          <CamperFeaturesList camper={camper} />
         </div>
         <Link className={css.btn} href={`/catalog/${camper.id}`}>
           Show more

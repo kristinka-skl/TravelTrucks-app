@@ -9,4 +9,5 @@
     width: fit-content;
     height: 48px;
     background: var(--badges);
+    mix-blend-mode: multiply;
 }

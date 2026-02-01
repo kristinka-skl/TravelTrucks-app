@@ -1,12 +1,15 @@
-import CamperItem from '@/app/components/CamperItem/CamperItem';
 import { getCamperDetails } from '@/app/lib/api';
+
+import CamperDetailsClientPage from './camperDetails.client';
 
 interface CamperDetailsProps {
   params: Promise<{ id: string }>;
 }
 
-export default async function CamperDetails({ params }: CamperDetailsProps) {
+export default async function CamperDetailsPage({
+  params,
+}: CamperDetailsProps) {
   const { id } = await params;
   const camper = await getCamperDetails(id);
-  return <CamperItem camper={camper} />;
+  return <CamperDetailsClientPage camper={camper} />;
 }

@@ -3,13 +3,11 @@ import { Camper } from '@/app/types/camper';
 import FeatureBadge from '../FeatureBadge/FeatureBadge';
 import css from './CamperFeaturesList.module.css';
 
-interface ProductFeaturesListProps {
+interface CamperFeaturesListProps {
   camper: Camper;
 }
 
-const ProductFeaturesList: React.FC<ProductFeaturesListProps> = ({
-  camper,
-}) => {
+const CamperFeaturesList: React.FC<CamperFeaturesListProps> = ({ camper }) => {
   return (
     <ul className={css.list}>
       {FEATURES_CONFIG.map((config) => {
@@ -31,4 +29,4 @@ const ProductFeaturesList: React.FC<ProductFeaturesListProps> = ({
   );
 };
 
-export default ProductFeaturesList;
+export default CamperFeaturesList;

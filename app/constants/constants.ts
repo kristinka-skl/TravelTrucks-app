@@ -1,18 +1,18 @@
 export const cardsPerPage = 4; //according to figma
+interface Button {
+  label: string;
+  icon: string;
+}
+export const equipmentOptions: { [key: string]: Button } = {
+  AC: { label: 'AC', icon: 'icon-ac' },
+  Automatic: { label: 'Automatic', icon: 'icon-transmission' },
+  Kitchen: { label: 'Kitchen', icon: 'icon-kitchen' },
+  TV: { label: 'TV', icon: 'icon-tv' },
+  Bathroom: { label: 'Bathroom', icon: 'icon-bathroom' },
+};
 
-export const equipmentOptions = [
-  { value: 'AC', label: 'AC', icon: 'icon-ac' },
-  { value: 'Automatic', label: 'Automatic', icon: 'icon-transmission' },
-  { value: 'Kitchen', label: 'Kitchen', icon: 'icon-kitchen' },
-  { value: 'TV', label: 'TV', icon: 'icon-tv' },
-  { value: 'Bathroom', label: 'Bathroom', icon: 'icon-bathroom' },
-];
-export const typeOptions = [
-  { value: 'panelTruck', label: 'Van', icon: 'icon-van' },
-  {
-    value: 'fullyIntegrated',
-    label: 'Fully Integrated',
-    icon: 'icon-fully-integrated',
-  },
-  { value: 'alcove', label: 'Alcove', icon: 'icon-alcove' },
-];
+export const typeOptions: { [key: string]: Button } = {
+  panelTruck: { label: 'Van', icon: 'icon-van' },
+  fullyIntegrated: { label: 'Fully Integrated', icon: 'icon-fully-integrated' },
+  alcove: { label: 'Alcove', icon: 'icon-alcove' },
+};

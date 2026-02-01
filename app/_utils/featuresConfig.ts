@@ -16,9 +16,10 @@ export const FEATURES_CONFIG: FeatureConfigItem[] = [
   { key: 'engine', icon: '/sprite.svg#icon-engine', variant: 'value' },
   { key: 'AC', label: 'AC', icon: '/sprite.svg#icon-ac' },
   { key: 'kitchen', label: 'Kitchen', icon: '/sprite.svg#icon-kitchen' },
+  { key: 'radio', label: 'Radio', icon: '/sprite.svg#icon-radio' },
   //   { key: 'bathroom', label: 'Bathroom', icon: '/sprite.svg#icon-bathroom' },
   //   { key: 'TV', label: 'TV', icon:  },
-  //   { key: 'radio', label: 'Radio', icon:  },
+
   //   { key: 'refrigerator', label: 'Fridge', icon:  },
   //   { key: 'microwave', label: 'Microwave', icon:  },
   //   { key: 'gas', label: 'Gas', icon:  },

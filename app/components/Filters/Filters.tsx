@@ -99,23 +99,27 @@ export default function Filters() {
                   Vehicle equipment
                 </legend>
                 <div className={css.filterEquipmentGroup}>
-                  {equipmentOptions.map((option) => (
-                    <label key={option.value} className={css.filterOptionLabel}>
-                      <Field
-                        type="checkbox"
-                        name="equipment"
-                        value={option.value}
-                        className={css.hiddenInput}
-                      />
+                  {Object.entries(equipmentOptions).map(
+                    ([option, camperFeature]) => (
+                      <label key={option} className={css.filterOptionLabel}>
+                        <Field
+                          type="checkbox"
+                          name="equipment"
+                          value={option}
+                          className={css.hiddenInput}
+                        />
 
-                      <div className={css.filterOptionContent}>
-                        <svg width="32" height="32" className={css.icon}>
-                          <use href={`/sprite.svg#${option.icon}`} />
-                        </svg>
-                        <span className={css.labelText}>{option.label}</span>
-                      </div>
-                    </label>
-                  ))}
+                        <div className={css.filterOptionContent}>
+                          <svg width="32" height="32" className={css.icon}>
+                            <use href={`/sprite.svg#${camperFeature.icon}`} />
+                          </svg>
+                          <span className={css.labelText}>
+                            {camperFeature.label}
+                          </span>
+                        </div>
+                      </label>
+                    )
+                  )}
                 </div>
               </fieldset>
               <fieldset>
@@ -125,25 +129,27 @@ export default function Filters() {
                   aria-labelledby={`${fieldId}-type`}
                   className={css.filterTypeGroup}
                 >
-                  {typeOptions.map((option) => (
-                    <label key={option.value} className={css.filterOptionLabel}>
+                  {Object.entries(typeOptions).map(([option, camperType]) => (
+                    <label key={option} className={css.filterOptionLabel}>
                       <Field
                         type="radio"
                         name="type"
-                        value={option.value}
+                        value={option}
                         className={css.hiddenInput}
                       />
 
                       <div
                         className={`
             ${css.filterOptionContent} 
-            ${option.value === 'fullyIntegrated' ? css.fullyIntegratedCard : ''}
+            ${option === 'fullyIntegrated' ? css.fullyIntegratedCard : ''}
           `}
                       >
                         <svg width="32" height="32" className={css.icon}>
-                          <use href={`/sprite.svg#${option.icon}`} />
+                          <use href={`/sprite.svg#${camperType.icon}`} />
                         </svg>
-                        <span className={css.labelText}>{option.label}</span>
+                        <span className={css.labelText}>
+                          {camperType.label}
+                        </span>
                       </div>
                     </label>
                   ))}

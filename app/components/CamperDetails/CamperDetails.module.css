@@ -1,0 +1,36 @@
+.ratingAndLocationDetailsPage {
+    margin-bottom: -8px;
+}
+
+.camperDetailsGallery {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+}
+
+.camperDetailsImage {
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.camperDetailsHeading,
+.camperDetailsPrice {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33333;
+    color: var(--main);
+    margin-bottom: 8px;
+}
+
+.camperDetailsPrice,
+.camperDetailsGallery {
+    margin-bottom: 28px;
+}
+
+.camperDetailsDescr {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text);
+}
