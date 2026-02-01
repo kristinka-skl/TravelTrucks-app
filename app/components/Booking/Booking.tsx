@@ -37,41 +37,51 @@ export default function Booking() {
         onSubmit={handleSubmit}
         validationSchema={BookingFormSchema}
       >
-        <Form className={css.form}>
-          <fieldset className={css.formList}>
-            <Field
-              className={css.formInput}
-              type="text"
-              name="name"
-              placeholder="Name*"
-            ></Field>
-            {/* <ErrorMessage name="name" component="span" className={css.error} /> */}
-            <Field
-              className={css.formInput}
-              type="email"
-              name="email"
-              placeholder="Email*"
-            ></Field>
-            {/* <ErrorMessage name="email" component="span" className={css.error} /> */}
-            <Field
-              className={css.formInput}
-              component={CalendarDatePicker}
-              name="date"
-              placeholderText="Booking date*"
-            ></Field>
-            {/* <ErrorMessage name="date" component="span" className={css.error} /> */}
-            <Field
-              className={`${css.formInput} ${css.commentInput}`}
-              component="textarea"
-              name="comment"
-              placeholder="Comment"
-              rows="4"
-            ></Field>
-          </fieldset>
-          <Button type="submit" primary>
-            Send
-          </Button>
-        </Form>
+        {({ errors, touched }) => {
+          return (
+            <Form className={css.form}>
+              <fieldset className={css.formList}>
+                <Field
+                  className={`${css.formInput} ${
+                    errors.name && touched.name ? css.inputError : ''
+                  }`}
+                  type="text"
+                  name="name"
+                  placeholder="Name*"
+                ></Field>
+                {/* <ErrorMessage name="name" component="span" className={css.error} /> */}
+                <Field
+                  className={`${css.formInput} ${
+                    errors.email && touched.email ? css.inputError : ''
+                  }`}
+                  type="email"
+                  name="email"
+                  placeholder="Email*"
+                ></Field>
+                {/* <ErrorMessage name="email" component="span" className={css.error} /> */}
+                <Field
+                  className={`${css.formInput} ${
+                    errors.date && touched.date ? css.inputError : ''
+                  }`}
+                  component={CalendarDatePicker}
+                  name="date"
+                  placeholderText="Booking date*"
+                ></Field>
+                {/* <ErrorMessage name="date" component="span" className={css.error} /> */}
+                <Field
+                  className={`${css.formInput} ${css.commentInput}`}
+                  as="textarea"
+                  name="comment"
+                  placeholder="Comment"
+                  rows="4"
+                ></Field>
+              </fieldset>
+              <Button type="submit" primary>
+                Send
+              </Button>
+            </Form>
+          );
+        }}
       </Formik>
     </>
   );
