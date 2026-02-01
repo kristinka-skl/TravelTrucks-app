@@ -19,6 +19,8 @@ export default function CatalogClientPage() {
     isFetchingNextPage,
     fetchNextPage,
     isLoading,
+    isError,
+    error,
   } = useInfiniteQuery({
     queryKey: ['campers', params],
     queryFn: ({ pageParam }) => {
@@ -40,6 +42,9 @@ export default function CatalogClientPage() {
       };
     },
   });
+  if (isError) {
+    throw error;
+  }
   const campers = data?.campers || [];
   const prevCountRef = useRef(0);
   useEffect(() => {
