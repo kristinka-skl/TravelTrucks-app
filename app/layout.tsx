@@ -4,6 +4,7 @@ import './globals.css';
 import Header from './components/Header/Header';
 import Container from './components/Container/Container';
 import TanStackProvider from './components/TanStackProvider/TanStackProvider';
+import { Toaster } from 'react-hot-toast';
 
 const interSans = Inter({
   variable: '--font-inter-sans',
@@ -29,6 +30,7 @@ export default function RootLayout({
           <Container>
             <Header />
             {children}
+            <Toaster position="top-right" reverseOrder={false} />
           </Container>
         </TanStackProvider>
       </body>

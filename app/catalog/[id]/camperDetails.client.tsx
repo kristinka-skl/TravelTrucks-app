@@ -15,6 +15,7 @@ export default function CamperDetailsClientPage({
   camper,
 }: CamperDetailsClientPageProps) {
   const [activeTab, setActiveTab] = useState('feature');
+
   return (
     <section className={css.sectionCamperDetailsPage}>
       <h1 className={css.hidden}>Camper details</h1>
@@ -22,21 +23,39 @@ export default function CamperDetailsClientPage({
         <h2 className={css.hidden}>Camper Description and gallery</h2>
         <CamperDetails camper={camper} />
       </section>
+      <nav className={css.sectionNav}>
+        <ul className={css.navList}>
+          <li>
+            <button
+              className={`${css.tabBtn} ${activeTab === 'feature' ? css.activeTabBtn : ''}`}
+              type="button"
+              onClick={() => setActiveTab('feature')}
+            >
+              Features
+            </button>
+          </li>
+          <li>
+            <button
+              className={`${css.tabBtn} ${activeTab === 'reviews' ? css.activeTabBtn : ''}`}
+              type="button"
+              onClick={() => setActiveTab('reviews')}
+            >
+              Reviews
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <div className={css.tabsAndBooking}>
+        <section className={css.sectionCamperFeaturesAndReviews}>
+          <h2 className={css.hidden}>Camper features and reviews</h2>
 
-      <section className={css.sectionCamperFeaturesAndReviews}>
-        <h2 className={css.hidden}>Camper features and reviews</h2>
-        <nav className={css.sectionNav}>
-          <ul className={css.navList}>
-            <li>Features</li>
-            <li>Reviews</li>
-          </ul>
-        </nav>
-        <CamperFeatures camper={camper} />
-        <Reviews camper={camper} />
-      </section>
-      <section className={css.sectionBooking}>
-        <Booking />
-      </section>
+          {activeTab === 'feature' && <CamperFeatures camper={camper} />}
+          {activeTab === 'reviews' && <Reviews camper={camper} />}
+        </section>
+        <section className={css.sectionBooking}>
+          <Booking />
+        </section>
+      </div>
     </section>
   );
 }

@@ -21,7 +21,11 @@ const CamperFeaturesList: React.FC<CamperFeaturesListProps> = ({ camper }) => {
 
         return (
           <li key={config.key} className={css.listItem}>
-            <FeatureBadge icon={config.icon} label={displayLabel} />
+            <FeatureBadge
+              icon={config.icon}
+              label={displayLabel}
+              invert={config.invert || false}
+            />
           </li>
         );
       })}

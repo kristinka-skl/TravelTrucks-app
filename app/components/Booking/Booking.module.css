@@ -1,0 +1,73 @@
+.formHeading {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.formHeading h2 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--main);
+}
+
+.formHeading p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--gray);
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.formList {
+    border: none;
+}
+
+.formInput {
+    border-radius: 12px;
+    padding: 18px 337px 18px 18px;
+    width: 527px;
+    outline: none;
+    border: none;
+    background: var(--inputs);
+    margin-bottom: 14px;
+}
+
+.formInput::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--gray);
+}
+
+.commentInput {
+    margin-bottom: 0;
+}
+
+.sendBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    border-radius: 200px;
+    padding: 16px 60px;
+    width: 166px;
+    height: 56px;
+    background: var(--button);
+    transition: background-color cubic-bezier(0.075, 0.82, 0.165, 1) ease-in-out;
+    color: var(--white);
+}
+
+.sendBtn:hover,
+.sendBtn:focus {
+    background-color: var(--button-hover)
+}

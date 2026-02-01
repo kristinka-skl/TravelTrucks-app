@@ -67,6 +67,7 @@
 .features {
     height: 104px;
     margin-bottom: 24px;
+    overflow: hidden;
 }
 
 .btn {

@@ -10,7 +10,9 @@ export default function CamperFeatures({ camper }: CamperFeaturesProps) {
 
   return (
     <div className={css.camperFeatures}>
-      <CamperFeaturesList camper={camper} />
+      <div className={css.camperFeaturesList}>
+        <CamperFeaturesList camper={camper} />
+      </div>
       <div className={css.vehicleDetails}>
         <h3 className={css.vehicleDetailsTitle}>Vehicle details</h3>
         <ul className={css.vehicleDetailsList}>

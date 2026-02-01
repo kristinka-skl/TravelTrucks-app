@@ -11,3 +11,13 @@
     background: var(--badges);
     mix-blend-mode: multiply;
 }
+
+.iconSvg {
+    stroke: none;
+    fill: var(--main);
+}
+
+.iconSvgInvert {
+    stroke: var(--main);
+    fill: none;
+}

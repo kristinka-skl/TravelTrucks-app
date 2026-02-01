@@ -2,6 +2,12 @@
     padding: 48px 64px 80px 64px;
 }
 
+.tabsAndBooking {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
 .hidden {
     display: none;
 }
@@ -12,9 +18,9 @@
 
 .sectionNav {
     width: 100%;
-    padding-bottom: 24px;
     border-bottom: 1px solid var(--gray-light);
     margin-bottom: 44px;
+
 }
 
 .navList {
@@ -22,12 +28,30 @@
     flex-direction: row;
     justify-content: flex-start;
     gap: 40px;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.2;
-    color: #101828;
 }
 
 .sectionNav li {
     cursor: pointer;
+}
+
+.tabBtn {
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--main);
+    padding-bottom: 24px;
+
+}
+
+.activeTabBtn {
+    border-bottom: 5px solid var(--button);
+}
+
+.sectionBooking {
+    padding: 44px 57px;
+    border: 1px solid var(--gray-light);
+    border-radius: 10px;
+    width: 100%;
+    height: 588px;
 }

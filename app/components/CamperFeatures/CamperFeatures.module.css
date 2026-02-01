@@ -1,12 +1,17 @@
 .camperFeatures {
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    justify-content: space-between;
     border-radius: 10px;
     padding: 44px 80px;
     width: 631px;
     height: 588px;
     background: var(--inputs);
+}
+
+.camperFeaturesList {
+    height: 164px;
+    overflow: hidden;
 }
 
 .vehicleDetailsTitle {
