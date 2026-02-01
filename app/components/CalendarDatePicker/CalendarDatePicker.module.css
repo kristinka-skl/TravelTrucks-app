@@ -32,3 +32,15 @@
     background-color: #475467;
     color: #f7f7f7;
 }
+
+.calendar :global(.react-datepicker__day-name) {
+    width: 32px;
+}
+
+.day {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: center;
+    color: #475467;
+}

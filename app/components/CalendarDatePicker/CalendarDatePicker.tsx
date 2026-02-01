@@ -40,6 +40,12 @@ const CalendarDatePicker: React.FC<CalendarDatePickerProps> = ({
       selected={dateValue}
       onChange={handleChange}
       minDate={new Date()}
+      calendarStartDay={1}
+      renderCustomDayName={(day) => (
+        <span className={css.day}>
+          {day.fullName.slice(0, 3).toUpperCase()}
+        </span>
+      )}
       calendarClassName={css.calendar}
     />
   );
