@@ -64,11 +64,9 @@ Follow these steps to set up the project locally:
 
 5.  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 👩‍💻 Author
+## Author
 
 **Khrystyana Skliarchuk** Junior Frontend Developer
 
-📧 Email: [kristinka.skl@gmail.com](mailto:kristinka.skl@gmail.com)  
-🐙 GitHub: [Go to Profile](https://github.com/kristinka-skl)
-
----
+- Email: [kristinka.skl@gmail.com](mailto:kristinka.skl@gmail.com)
+- GitHub: [Go to Profile](https://github.com/kristinka-skl)
