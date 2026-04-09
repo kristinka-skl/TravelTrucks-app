@@ -1,37 +1,82 @@
 .header {
-    border-bottom: 1px solid #f2f4f7;
-    padding: 24px 64px;
-    width: 1440px;
-    height: 72px;
-    background: #f7f7f7;
+  border-bottom: 1px solid #f2f4f7;
+  padding: 16px;
+  width: 100%;
+  height: auto;
+  background: #f7f7f7;
 }
 
 .headerNav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-    gap: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .headerNavLinks {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-    gap: 32px;
-    width: 138px;
-    height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 24px;
+  height: 24px;
+}
+
+.headerNav svg {
+  width: 120px;
+  height: auto;
 }
 
 .headerLink {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    text-align: center;
-    color: var(--main);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--main);
 }
 
 .activeHeaderLink {
-    color: var(--button-hover);
+  font-size: 14px;
+  color: var(--button-hover);
+}
+
+@media (min-width: 375px) {
+  .header {
+    padding: 16px 20px;
+  }
+
+  .headerNavLinks {
+    gap: 32px;
+  }
+
+  .headerNav svg {
+    width: 136px;
+    height: 15px;
+  }
+
+  .headerLink {
+    font-size: 16px;
+  }
+
+  .activeHeaderLink {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 20px 32px;
+  }
+
+  .headerNavLinks {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1440px) {
+  .header {
+    padding: 24px 64px;
+    height: 72px;
+  }
 }

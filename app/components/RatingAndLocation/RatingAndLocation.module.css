@@ -5,7 +5,7 @@
     flex-direction: row;
     gap: 16px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5;
     margin-bottom: 24px;
 }
@@ -17,8 +17,38 @@
     justify-content: center;
     flex-direction: row;
     gap: 4px;
+    min-width: 0;
+}
+
+.rating p,
+.location p {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .rating svg {
     fill: var(--rating);
+}
+
+@media (min-width: 375px) {
+    .ratingAndLocation {
+        font-size: 16px;
+    }
+
+    .rating,
+    .location {
+        min-width: auto;
+    }
+
+    .rating p,
+    .location p {
+        flex: unset;
+        min-width: auto;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+    }
 }

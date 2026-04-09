@@ -9,7 +9,7 @@
 }
 
 .calendar :global(.react-datepicker__month) {
-    padding: 20px 12px 12px 12px;
+    padding: 20px 4px 12px 4px;
 }
 
 .calendar :global(.react-datepicker__day-names) {
@@ -21,7 +21,7 @@
 }
 
 .calendar :global(.react-datepicker__day) {
-    width: 36px;
+    width: 32px;
     height: 32px;
     margin: 0;
 }
@@ -34,7 +34,21 @@
 }
 
 .calendar :global(.react-datepicker__day-name) {
-    width: 32px;
+    width: 28px;
+}
+
+@media (min-width: 375px) {
+    .calendar :global(.react-datepicker__month) {
+        padding: 20px 12px 12px 12px;
+    }
+
+    .calendar :global(.react-datepicker__day) {
+        width: 36px;
+    }
+
+    .calendar :global(.react-datepicker__day-name) {
+        width: 32px;
+    }
 }
 
 .day {

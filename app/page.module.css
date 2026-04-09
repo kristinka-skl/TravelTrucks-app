@@ -1,63 +1,127 @@
 .heroPage {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/Hero-camper.webp');
-    height: 696px;
-    padding: 260px 805px 260px 64px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/Hero-camper.webp');
+  background-size: cover;
+  background-position: 60%;
+  height: auto;
+  min-height: 480px;
+  padding: 64px 16px;
 }
 
 .heroSection {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    gap: 40px;
-    width: 571px;
-    height: 176px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
 }
 
 .heroText {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    gap: 16px;
-    width: 571px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
 }
 
 .heroTitle {
-    font-weight: 600;
-    font-size: 47px;
-    line-height: 0.67;
-    color: var(--inputs);
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--inputs);
 }
 
 .heroSubText {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 1.33;
-    color: var(--inputs);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--inputs);
 }
 
 .heroBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 10px;
-    border-radius: 200px;
-    padding: 16px 48px;
-    width: 173px;
-    height: 56px;
-    background-color: var(--button);
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: -0.01em;
-    color: var(--white);
-    transition: background-color cubic-bezier(0.075, 0.82, 0.165, 1) ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  border-radius: 200px;
+  padding: 16px 48px;
+  width: 173px;
+  height: 56px;
+  background-color: var(--button);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  transition: background-color cubic-bezier(0.075, 0.82, 0.165, 1) ease-in-out;
 }
 
 .heroBtn:focus,
 .heroBtn:hover {
+  background-color: var(--button-hover);
+}
 
-    background-color: var(--button-hover);
+@media (min-width: 375px) {
+  .heroPage {
+    padding: 80px 20px;
+  }
+
+  .heroTitle {
+    font-size: 28px;
+  }
+
+  .heroSubText {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .heroPage {
+    min-height: 560px;
+    padding: 140px 40px;
+    background-position: center;
+  }
+
+  .heroSection {
+    width: 480px;
+  }
+
+  .heroTitle {
+    font-size: 38px;
+    line-height: 0.67;
+  }
+
+  .heroSubText {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .heroPage {
+    height: 696px;
+    min-height: unset;
+    padding: 260px 805px 260px 64px;
+  }
+
+  .heroSection {
+    width: 571px;
+    height: 176px;
+  }
+
+  .heroText {
+    width: 571px;
+  }
+
+  .heroTitle {
+    font-size: 47px;
+    line-height: 0.67;
+  }
+
+  .heroSubText {
+    font-size: 24px;
+    line-height: 1.33;
+  }
 }
