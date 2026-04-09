@@ -1,43 +1,67 @@
 .camperFeatures {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 10px;
-    padding: 44px 80px;
-    width: 631px;
-    height: 588px;
-    background: var(--inputs);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 20px 16px;
+  width: 100%;
+  height: auto;
+  background: var(--inputs);
 }
 
 .camperFeaturesList {
-    height: 164px;
-    overflow: hidden;
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 24px;
 }
 
 .vehicleDetailsTitle {
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--gray-light);
-    margin-bottom: 24px;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.2;
-    color: var(--main);
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--gray-light);
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--main);
 }
 
 .vehicleDetailsList {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    font-weight: 500;
-    font-size: 16px;
-
-    line-height: 1.5;
-    text-align: center;
-    color: var(--main);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--main);
 }
 
 .vehicleDetailsItem {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media (min-width: 375px) {
+  .camperFeatures {
+    padding: 24px 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .camperFeatures {
+    padding: 32px 40px;
+  }
+
+  .camperFeaturesList {
+    height: 164px;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .camperFeatures {
+    padding: 44px 80px;
+    height: 588px;
+  }
 }

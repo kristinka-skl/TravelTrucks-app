@@ -1,57 +1,61 @@
 .reviewsList {
-    width: 631px;
-    height: 588px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    gap: 44px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 44px;
 }
 
 .reviewHeading {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-    align-items: center;
-    margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
 .ava {
-    border-radius: 60px;
-    width: 60px;
-    height: 60px;
-    background: var(--badges);
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 1.33333;
-    color: var(--button);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  background: var(--badges);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  color: var(--button);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .name {
-
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    color: var(--main);
-    margin-bottom: 4px;
-
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--main);
+  margin-bottom: 4px;
 }
 
 .fullStar {
-    fill: var(--rating);
+  fill: var(--rating);
 }
 
 .emptyStar {
-
-    fill: var(--badges);
+  fill: var(--badges);
 }
 
 .reviewText {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    color: var(--text);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+@media (min-width: 1440px) {
+  .reviewsList {
+    height: 588px;
+  }
 }

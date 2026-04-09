@@ -1,4 +1,4 @@
-import { Field, Form, Formik } from 'formik';
+import { Field, Form, Formik, FormikHelpers } from 'formik';
 import css from './Booking.module.css';
 import CalendarDatePicker from '../CalendarDatePicker/CalendarDatePicker';
 import * as Yup from 'yup';
@@ -23,7 +23,11 @@ export default function Booking() {
     date: Yup.string().required(),
     comment: Yup.string().trim().optional(),
   });
-  const handleSubmit = (values: BookingFormValues) => {
+  const handleSubmit = (
+    values: BookingFormValues,
+    actions: FormikHelpers<BookingFormValues>
+  ) => {
+    actions.resetForm();
     toast.success('Successfully booked!');
   };
   return (

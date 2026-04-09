@@ -1,57 +1,117 @@
 .sectionCamperDetailsPage {
-    padding: 48px 64px 80px 64px;
+  padding: 24px 16px;
 }
 
 .tabsAndBooking {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .sectionCamperDescrAndGallery {
-    margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .sectionNav {
-    width: 100%;
-    border-bottom: 1px solid var(--gray-light);
-    margin-bottom: 44px;
-
+  width: 100%;
+  border-bottom: 1px solid var(--gray-light);
+  margin-bottom: 44px;
 }
 
 .navList {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 24px;
 }
 
 .sectionNav li {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .tabBtn {
-    background-color: transparent;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.2;
-    color: var(--main);
-    padding-bottom: 24px;
-
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2;
+  color: var(--main);
+  padding-bottom: 16px;
 }
 
 .activeTabBtn {
-    border-bottom: 5px solid var(--button);
+  border-bottom: 5px solid var(--button);
 }
 
 .sectionBooking {
+  padding: 24px 16px;
+  border: 1px solid var(--gray-light);
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 375px) {
+  .sectionCamperDetailsPage {
+    padding: 24px 20px;
+  }
+
+  .sectionBooking {
+    padding: 24px 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .sectionCamperDetailsPage {
+    padding: 40px 32px;
+  }
+
+  .sectionCamperDescrAndGallery {
+    margin-bottom: 50px;
+  }
+
+  .tabBtn {
+    font-size: 18px;
+    padding-bottom: 20px;
+  }
+
+  .navList {
+    gap: 32px;
+  }
+
+  .sectionBooking {
+    padding: 32px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .sectionCamperDetailsPage {
+    padding: 48px 64px 80px 64px;
+  }
+
+  .tabsAndBooking {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .sectionCamperDescrAndGallery {
+    margin-bottom: 60px;
+  }
+
+  .tabBtn {
+    font-size: 20px;
+    padding-bottom: 24px;
+  }
+
+  .navList {
+    gap: 40px;
+  }
+
+  .sectionBooking {
     padding: 44px 57px;
-    border: 1px solid var(--gray-light);
-    border-radius: 10px;
-    width: 100%;
     height: 588px;
+  }
 }

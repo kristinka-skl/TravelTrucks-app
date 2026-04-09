@@ -1,57 +1,63 @@
 .formHeading {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
 }
 
 .formHeading h2 {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.2;
-    color: var(--main);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--main);
 }
 
 .formHeading p {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    color: var(--gray);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--gray);
 }
 
 .form {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    gap: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .formList {
-    border: none;
+  border: none;
+  width: 100%;
+}
+
+.formList :global(.react-datepicker-wrapper),
+.formList :global(.react-datepicker__input-container) {
+  width: 100%;
 }
 
 .formInput {
-    border-radius: 12px;
-    padding: 18px;
-    width: 527px;
-    outline: none;
-    border: none;
-    background: var(--inputs);
-    margin-bottom: 14px;
+  border-radius: 12px;
+  padding: 18px;
+  width: 100%;
+  outline: none;
+  border: none;
+  background: var(--inputs);
+  margin-bottom: 14px;
 }
 
 .formInput::placeholder {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    color: var(--gray);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--gray);
 }
 
 .commentInput {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .inputError {
-    border: 1px solid var(--button);
+  border: 1px solid var(--button);
 }
