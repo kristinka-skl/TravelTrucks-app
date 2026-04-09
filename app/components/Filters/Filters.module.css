@@ -50,6 +50,7 @@
   width: 100%;
   height: 56px;
   background: var(--inputs);
+  color: var(--main);
 }
 
 .filtersGroupTitle {
